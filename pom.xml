@@ -69,6 +69,8 @@
         </dependency>
 
 
+
+<!--        TUTAJ DODALEM ZALEZNOSC DO  TWORZENIA JSON Z OBIEKTÓW W JAVIE -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

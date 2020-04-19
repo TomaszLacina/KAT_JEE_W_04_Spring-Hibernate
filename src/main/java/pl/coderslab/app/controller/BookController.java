@@ -16,7 +16,7 @@ public class BookController {
         this.bookDao = bookDao;
     }
 
-    @GetMapping(value = "/{id}", produces = "application/json")
+    @GetMapping(value = "/{id}")
     @ResponseBody
     public Book book(@PathVariable Long id){
         return bookDao.findById(id);
@@ -40,7 +40,7 @@ public class BookController {
         bookInDb.setRating(book.getRating());
         bookInDb.setDescription(book.getDescription());
 
-        bookDao.update(book);
+        bookDao.update(bookInDb);
 
         return bookInDb;
     }
