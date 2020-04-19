@@ -13,6 +13,9 @@ public class Book {
     private Integer rating;
     private String description;
 
+
+
+
     public Long getId() {
         return id;
     }
@@ -43,5 +46,15 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", rating=" + rating +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
