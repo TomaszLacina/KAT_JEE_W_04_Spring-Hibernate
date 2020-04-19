@@ -4,8 +4,12 @@ package pl.coderslab.app.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.app.dao.BookDao;
+import pl.coderslab.app.dao.PersonDao;
+import pl.coderslab.app.dao.PersonDetailsDao;
 import pl.coderslab.app.dao.PublisherDao;
 import pl.coderslab.app.entity.Book;
+import pl.coderslab.app.entity.Person;
+import pl.coderslab.app.entity.PersonDetails;
 import pl.coderslab.app.entity.Publisher;
 
 @Controller
@@ -14,10 +18,13 @@ public class BookController {
 
     private final BookDao bookDao;
     private final PublisherDao publisherDao;
-
-    public BookController(BookDao bookDao, PublisherDao publisherDao) {
+    private final PersonDao personDao;
+    private final PersonDetailsDao personDetailsDao;
+    public BookController(BookDao bookDao, PublisherDao publisherDao, PersonDao personDao, PersonDetailsDao personDetailsDao) {
         this.bookDao = bookDao;
         this.publisherDao = publisherDao;
+        this.personDao = personDao;
+        this.personDetailsDao = personDetailsDao;
     }
 
     @GetMapping(value = "/{id}")
@@ -92,6 +99,20 @@ public class BookController {
     @ResponseBody
     public void delete(@PathVariable Long id){
         bookDao.remove(id);
+
+    }
+
+    @GetMapping("/userTest2")
+    public void createUser2(){
+        Person person = new Person();
+        person.setEmail("nowy mail");
+
+        PersonDetails personDetails = new PersonDetails();
+        personDetails.setFirstName("Tomasz");
+        personDetailsDao.save(personDetails);
+
+        person.setPersonDetails(personDetails);
+        personDao.save(person);
 
     }
 
