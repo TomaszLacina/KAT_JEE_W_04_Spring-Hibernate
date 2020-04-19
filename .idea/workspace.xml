@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8ae0723a-5fd5-4e1f-a6f2-cf63b4c5b643" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1akZKFG8QVOx69at1sOvyieaHME" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.coderslab.app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Spring Hibernate Kat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="adminPort" value="8005" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="contextPath" value="/" />
+      <option name="customContext" value="" />
+      <option name="docBase" value="F:\fortum\KAT_JEE_W_04_Spring-Hibernate\src\main\webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="moduleName" />
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8080" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat 8.5.54" />
+          <option name="number" value="0" />
+          <option name="path" value="E:\TOmaty\apache-tomcat-8.5.54-windows-x64\apache-tomcat-8.5.54" />
+          <option name="version" value="8.5.54.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ae0723a-5fd5-4e1f-a6f2-cf63b4c5b643" name="Default Changelist" comment="" />
+      <created>1587281486278</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587281486278</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587283564511">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="223" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587283564511" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1587287648283">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587287648283" />
+    <state x="549" y="221" key="FileChooserDialogImpl" timestamp="1587283535066">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="549" y="221" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587283535066" />
+    <state width="1877" height="444" key="GridCell.Tab.0.bottom" timestamp="1587289858205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="444" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587289858205" />
+    <state width="1877" height="444" key="GridCell.Tab.0.center" timestamp="1587289858205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="444" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587289858205" />
+    <state width="1877" height="444" key="GridCell.Tab.0.left" timestamp="1587289858205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="444" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587289858205" />
+    <state width="1877" height="444" key="GridCell.Tab.0.right" timestamp="1587289858205">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="444" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587289858205" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1587282182491">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587282182491" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1587289723385">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1587289723385" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1587282448005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587282448005" />
+  </component>
+</project>
