@@ -12,6 +12,9 @@ public class PersonDetails {
 
     private String firstName;
 
+    @OneToOne(mappedBy = "personDetails")
+    private Person person;
+
     public Long getId() {
         return id;
     }

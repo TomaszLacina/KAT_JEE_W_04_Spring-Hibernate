@@ -14,7 +14,7 @@ public class Person {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "personDetails_id")
+    @JoinColumn(name = "personDetails_id" )
     private PersonDetails personDetails;
 
     public Long getId() {

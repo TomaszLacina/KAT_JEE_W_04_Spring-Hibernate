@@ -12,6 +12,8 @@ import pl.coderslab.app.entity.Person;
 import pl.coderslab.app.entity.PersonDetails;
 import pl.coderslab.app.entity.Publisher;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/book")
 public class BookController {
@@ -25,6 +27,24 @@ public class BookController {
         this.publisherDao = publisherDao;
         this.personDao = personDao;
         this.personDetailsDao = personDetailsDao;
+    }
+
+
+
+    @GetMapping(value = "/all")
+    @ResponseBody
+    public List<Book> getAll(){
+        List<Book> books = bookDao.findAll();
+
+        return books;
+    }
+
+    @GetMapping(value = "/rating/{rating}")
+    @ResponseBody
+    public List<Book> findWithRatingGreaterThen(@PathVariable Integer rating){
+        List<Book> books = bookDao.findAllWithRatingGreaterThen(rating);
+
+        return books;
     }
 
     @GetMapping(value = "/{id}")
@@ -109,6 +129,7 @@ public class BookController {
 
         PersonDetails personDetails = new PersonDetails();
         personDetails.setFirstName("Tomasz");
+
         personDetailsDao.save(personDetails);
 
         person.setPersonDetails(personDetails);
