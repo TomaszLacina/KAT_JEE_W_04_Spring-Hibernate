@@ -20,7 +20,7 @@ public class Publisher {
 //    @JsonIgnore
 //    @OneToMany
 //    @JoinColumn(name = "publisher_id")
-//    private List<Book> books = new ArrayList<>();
+//    private List<Book> books.jsp = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -39,11 +39,11 @@ public class Publisher {
     }
 
 //    public List<Book> getBooks() {
-//        return books;
+//        return books.jsp;
 //    }
 //
-//    public void setBooks(List<Book> books) {
-//        this.books = books;
+//    public void setBooks(List<Book> books.jsp) {
+//        this.books.jsp = books.jsp;
 //    }
 
     @Override
@@ -51,7 +51,7 @@ public class Publisher {
         return "Publisher{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-//                ", books=" + books +
+//                ", books.jsp=" + books.jsp +
                 '}';
     }
 }
