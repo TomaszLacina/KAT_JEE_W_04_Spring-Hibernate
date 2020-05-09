@@ -15,12 +15,12 @@ public class Publisher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-
-
-    @JsonIgnore
-    @OneToMany
-    @JoinColumn(name = "publisher_id")
-    private List<Book> books = new ArrayList<>();
+//
+//
+//    @JsonIgnore
+//    @OneToMany
+//    @JoinColumn(name = "publisher_id")
+//    private List<Book> books = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -38,20 +38,20 @@ public class Publisher {
         this.name = name;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
+//    public List<Book> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(List<Book> books) {
+//        this.books = books;
+//    }
 
     @Override
     public String toString() {
         return "Publisher{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", books=" + books +
+//                ", books=" + books +
                 '}';
     }
 }
