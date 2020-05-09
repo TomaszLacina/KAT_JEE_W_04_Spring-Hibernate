@@ -1,6 +1,8 @@
 package pl.coderslab.app.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,8 @@ public class Publisher {
     private Long id;
     private String name;
 
+
+    @JsonIgnore
     @OneToMany
     @JoinColumn(name = "publisher_id")
     private List<Book> books = new ArrayList<>();
