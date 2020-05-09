@@ -65,7 +65,7 @@ public class BookController {
 
         Publisher publisher = new Publisher();
         publisher.setName("Nowy publisher");
-        publisher.getBooks().add(book);
+
 
         publisherDao.save(publisher);
 
