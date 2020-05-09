@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <spring-framework.version>5.1.9.RELEASE</spring-framework.version>
+        <spring-framework.version>5.1.14.RELEASE</spring-framework.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -74,7 +74,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.4</version>
+            <version>2.9.10.3</version>
         </dependency>
 
     </dependencies>
