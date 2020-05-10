@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pl.coderslab.app.entity.Author;
 import pl.coderslab.app.entity.Book;
 import pl.coderslab.app.entity.Publisher;
 
@@ -40,6 +41,26 @@ public class ValidationController {
             sb.append(" ");
             sb.append(bookConstraintViolation.getMessage());
             sb.append("<br>");
+        }
+
+        return sb.toString();
+    }
+
+    @RequestMapping("/author")
+    @ResponseBody
+    public String validateAuthor(){
+        StringBuffer sb = new StringBuffer();
+
+        Author author = new Author();
+        author.setYearOfBirth(2012);
+
+        Set<ConstraintViolation<Author>> constraintViolations = validator.validate(author);
+
+        for( ConstraintViolation<Author> authorConstraintViolation : constraintViolations){
+            sb.append(authorConstraintViolation.getPropertyPath());
+            sb.append(" ");
+            sb.append(authorConstraintViolation.getMessage());
+            sb.append("\n");
         }
 
         return sb.toString();

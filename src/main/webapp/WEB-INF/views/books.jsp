@@ -11,6 +11,7 @@
                         <td><c:out value = "${book.rating}"/></td>
                         <td><c:out value = "${book.description}"/></td>
                         <td><c:out value = "${book.publisher.name}"/></td>
+                        <td><c:out value = "${book.authors}"/></td>
                     </tr>
                </c:forEach>
            </tbody>

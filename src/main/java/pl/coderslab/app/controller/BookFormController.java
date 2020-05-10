@@ -3,6 +3,7 @@ package pl.coderslab.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +13,7 @@ import pl.coderslab.app.dao.PublisherDao;
 import pl.coderslab.app.entity.Book;
 import pl.coderslab.app.entity.Publisher;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -34,10 +36,13 @@ public class BookFormController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public RedirectView create(@ModelAttribute Book book){
-        bookDao.save(book);
+    public String create(@Valid Book book, BindingResult result){
+        if(result.hasErrors()){
+            return "bookForm";
+        }
 
-        return new RedirectView("/book/all");
+        bookDao.save(book);
+        return "redirect:/book/all";
     }
 
     @ModelAttribute("publishers")

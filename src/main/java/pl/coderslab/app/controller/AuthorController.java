@@ -43,6 +43,7 @@ public class AuthorController {
         List<Book> all = bookDao.findAll();
         for(int i = 0 ; i < 5 ; i++){
             Author author = new Author();
+
             Book book = all.get(random.nextInt(all.size()));
             author.getBookList().add(book);
 
