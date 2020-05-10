@@ -1,8 +1,11 @@
 package pl.coderslab.app.entity;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "books")
@@ -11,10 +14,20 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Size(min = 5)
     private String title;
+
+    @Range(min = 0, max = 10)
     private Integer rating;
+
+    @Size(max = 600)
     private String description;
 
+    @Min(1)
+    private Integer pages;
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
@@ -59,6 +72,14 @@ public class Book {
 
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
+    }
+
+    public Integer getPages() {
+        return pages;
+    }
+
+    public void setPages(Integer pages) {
+        this.pages = pages;
     }
 
     @Override

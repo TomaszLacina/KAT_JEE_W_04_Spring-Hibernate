@@ -68,6 +68,11 @@
             <version>2.3.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.17.Final</version>
+        </dependency>
 
 
 <!--        TUTAJ DODALEM ZALEZNOSC DO  TWORZENIA JSON Z OBIEKTÓW W JAVIE -->
