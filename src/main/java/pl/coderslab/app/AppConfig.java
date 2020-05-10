@@ -40,10 +40,10 @@ public class AppConfig implements WebMvcConfigurer {
 
         //TO MUSIALEM ZAKOMENTWOAC BO MI PSULO KONWERSJE DO JSONA, JAK NIE ROBICIE REST API TO TO ZOSTAWCIE :-)
 
-//        StringHttpMessageConverter stringConverter = new StringHttpMessageConverter();
-//        stringConverter.setSupportedMediaTypes(Arrays.asList(new MediaType("text", "plain",
-//                Charset.forName("UTF-8"))));
-//        converters.add(stringConverter);
+        StringHttpMessageConverter stringConverter = new StringHttpMessageConverter();
+        stringConverter.setSupportedMediaTypes(Arrays.asList(new MediaType("text", "plain",
+                Charset.forName("UTF-8"))));
+        converters.add(stringConverter);
     }
 
     @Bean
