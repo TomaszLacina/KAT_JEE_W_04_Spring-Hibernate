@@ -19,7 +19,7 @@ public class BookDao {
 
 
     public List<Book> findAll(){
-        Query query = entityManager.createQuery("SELECT b FROM Book b");
+        Query query = entityManager.createQuery("SELECT b FROM Book b LEFT JOIN FETCH b.authors a");
         List<Book> books = query.getResultList();
 
         return books;

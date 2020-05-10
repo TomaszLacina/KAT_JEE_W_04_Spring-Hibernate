@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "books")
@@ -32,7 +34,12 @@ public class Book {
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
-
+    @ManyToMany
+    @JoinTable(
+            name="books_authors",
+            joinColumns=@JoinColumn(name="book_id"),
+            inverseJoinColumns=@JoinColumn(name="author_id"))
+    private List<Author> authors = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -80,6 +87,15 @@ public class Book {
 
     public void setPages(Integer pages) {
         this.pages = pages;
+    }
+
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
     }
 
     @Override
