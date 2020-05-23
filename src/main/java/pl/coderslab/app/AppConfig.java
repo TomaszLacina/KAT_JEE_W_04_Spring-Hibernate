@@ -3,6 +3,7 @@ package pl.coderslab.app;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -19,7 +20,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import pl.coderslab.app.converter.PublisherConverter;
-import pl.coderslab.app.entity.Publisher;
 
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
@@ -32,6 +32,7 @@ import java.util.Locale;
 @EnableWebMvc
 @ComponentScan(basePackages = "pl.coderslab")
 @EnableTransactionManagement
+@EnableJpaRepositories  //ADNOTACJA ODPOWIEDZIALNA ZA WŁĄCZENIE SPRING DATA
 public class AppConfig implements WebMvcConfigurer {
 
 

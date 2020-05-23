@@ -17,6 +17,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Size(min = 5)
     private String title;
 
@@ -29,12 +30,16 @@ public class Book {
     @Min(1)
     private Integer pages;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     @NotNull
     @ManyToOne
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name="books_authors",
             joinColumns=@JoinColumn(name="book_id"),
@@ -96,6 +101,14 @@ public class Book {
 
     public void setAuthors(List<Author> authors) {
         this.authors = authors;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override

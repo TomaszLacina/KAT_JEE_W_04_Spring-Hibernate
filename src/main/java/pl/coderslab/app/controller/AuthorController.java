@@ -11,6 +11,7 @@ import pl.coderslab.app.dao.BookDao;
 import pl.coderslab.app.entity.Author;
 import pl.coderslab.app.entity.Book;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.Random;
 
@@ -18,11 +19,12 @@ import java.util.Random;
 @RequestMapping("/author")
 public class AuthorController {
 
-
     private final AuthorDao authorDao;
     private final BookDao bookDao;
 
 
+
+    @NotBlank
     public AuthorController(AuthorDao authorDao, BookDao bookDao) {
         this.authorDao = authorDao;
         this.bookDao = bookDao;

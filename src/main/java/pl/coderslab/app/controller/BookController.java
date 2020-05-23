@@ -8,11 +8,10 @@ import pl.coderslab.app.dao.BookDao;
 import pl.coderslab.app.dao.PersonDao;
 import pl.coderslab.app.dao.PersonDetailsDao;
 import pl.coderslab.app.dao.PublisherDao;
-import pl.coderslab.app.entity.Book;
-import pl.coderslab.app.entity.Person;
-import pl.coderslab.app.entity.PersonDetails;
-import pl.coderslab.app.entity.Publisher;
+import pl.coderslab.app.entity.*;
+import pl.coderslab.app.repository.BookRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -20,11 +19,16 @@ import java.util.List;
 public class BookController {
 
     private final BookDao bookDao;
+
+    private final BookRepository bookRepository;
+
     private final PublisherDao publisherDao;
     private final PersonDao personDao;
     private final PersonDetailsDao personDetailsDao;
-    public BookController(BookDao bookDao, PublisherDao publisherDao, PersonDao personDao, PersonDetailsDao personDetailsDao) {
+
+    public BookController(BookDao bookDao, BookRepository bookRepository, PublisherDao publisherDao, PersonDao personDao, PersonDetailsDao personDetailsDao) {
         this.bookDao = bookDao;
+        this.bookRepository = bookRepository;
         this.publisherDao = publisherDao;
         this.personDao = personDao;
         this.personDetailsDao = personDetailsDao;
@@ -34,9 +38,40 @@ public class BookController {
 
     @GetMapping(value = "/all")
     public String getAll(Model model){
-        List<Book> books = bookDao.findAll();
+//        List<Book> books = bookDao.findAll();
+//        List<Book> books = bookRepository.findAll();
+//        List<Book> books = bookRepository.findByTitle("KAT_JEE_W_04");
+
+        List<Book> byCategoryId = bookRepository.findByCategoryId(3L);
+
+        Category category = new Category();
+        category.setName("Takiej kategorii nie ma :-(");
+        category.setId(3L);
+
+        List<Book> byCategory = bookRepository.findByCategory(category);
+
+        List<Book> books = new ArrayList<>();
+
+        books.addAll(byCategory);
+        books.addAll(byCategoryId);
+
         model.addAttribute("books", books);
         return "books";
+    }
+
+    @GetMapping(value = "/testData")
+    public void createTestData(){
+
+        Book book = new Book();
+        book.setTitle("Ksiazka z kategoria");
+        book.setPages(123);
+        book.setDescription("Takie tam, pisadlo");
+
+        Category category = new Category();
+        category.setName("Akcja");
+        book.setCategory(category);
+        book.setPublisher(publisherDao.findAll().get(0));
+        bookRepository.save(book);
     }
 
     @GetMapping(value = "/rating/{rating}")
