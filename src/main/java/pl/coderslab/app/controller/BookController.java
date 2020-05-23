@@ -13,6 +13,7 @@ import pl.coderslab.app.repository.BookRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/book")
@@ -41,19 +42,20 @@ public class BookController {
 //        List<Book> books = bookDao.findAll();
 //        List<Book> books = bookRepository.findAll();
 //        List<Book> books = bookRepository.findByTitle("KAT_JEE_W_04");
+//        List<Book> books = bookRepository.customFindByTitle("KAT_JEE_W_04");
 
-        List<Book> byCategoryId = bookRepository.findByCategoryId(3L);
-
+//        List<Book> byCategoryId = bookRepository.findByCategoryId(3L);
+//
         Category category = new Category();
         category.setName("Takiej kategorii nie ma :-(");
         category.setId(3L);
-
-        List<Book> byCategory = bookRepository.findByCategory(category);
-
+//
+        List<Book> byCategory = bookRepository.customFindByCategory(category);
+//
         List<Book> books = new ArrayList<>();
-
+//
         books.addAll(byCategory);
-        books.addAll(byCategoryId);
+//        books.addAll(byCategoryId);
 
         model.addAttribute("books", books);
         return "books";
@@ -84,7 +86,27 @@ public class BookController {
 
     @GetMapping(value = "/{id}")
     @ResponseBody
-    public Book book(@PathVariable Long id){
+    public Book book(@PathVariable Long id) throws Exception {
+        Optional<Book> book = bookRepository.findById(id);
+        Book book3 = book.orElseThrow(Exception::new);
+
+
+        List<Book> byCategoryId = bookRepository.findByCategoryId(1L);
+
+
+        Book book2 = book.orElse(new Book());
+
+
+        if(book.isPresent()) {
+            Book book1 = book.get();
+        }
+
+
+        Book bookDaoById = bookDao.findById(id);
+        if(bookDaoById == null){
+            System.out.println("tutaj jakas obsluga bledu");
+        }
+
         return bookDao.findById(id);
     }
 
