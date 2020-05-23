@@ -30,6 +30,7 @@ public class Book {
     @Min(1)
     private Integer pages;
 
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private Category category;

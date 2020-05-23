@@ -22,4 +22,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     @Query("SELECT b FROM Book b where b.category = ?1")
     List<Book> customFindByCategory(Category category);
+
+
 }
